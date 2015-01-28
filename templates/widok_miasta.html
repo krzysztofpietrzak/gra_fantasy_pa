@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Twoje miasto{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>{{ gracz.nazwa_grodu }}</h1>
+        <center>
+
+        <table style="background-color: darkkhaki; border: solid black; text-align: center ">
+	        <tr>
+		        <td>
+                    {% if gracz.zamek and gracz.rasa == "goblin" %}
+                        <img src="http://www.hota.acidcave.net/sphinx/fort.png" >
+                        <h4>Fort</h4>
+                    {% endif %}
+
+                    {% if gracz.zamek and gracz.rasa == "czlowiek" %}
+                            <img src="http://www.wog.acidcave.net/sphinx/fort.gif">
+                        <h4>Fort</h4>
+                    {% endif %}</td>
+		        <td>
+                    {% if gracz.koszary and gracz.rasa == "czlowiek" %}
+                        <img src="http://www.heroes3.eu/images/budowle/akademia-wojskowa.gif">
+                        <h4><a href="/koszary_ludzi/">Koszary</a></h4>
+                    {% endif %}
+
+
+                    {% if gracz.koszary and gracz.rasa == "goblin" %}
+                        <img src="http://www.heroes3.eu/images/budowle/akademia-wojskowa.gif">
+                        <h4><a href="/koszary_goblinow/">Koszary</a></h4>
+                    {% endif %}
+                </td>
+	        </tr>
+	        <tr>
+		        <td>
+                    {% if gracz.kopalnia %}
+                        <img src="http://www.heroes3.eu/images/budowle/kopalnia-zlota.gif">
+                        <h4>Kopalnia</h4>
+                    {% endif %}
+                </td>
+		        <td>
+                    {% if gracz.uniwersytet %}
+                        <img src="http://www.heroes3.eu/images/budowle/biblioteka-oswiecenia.gif">
+                        <h4><a href="/uniwersytet/">Uniwersytet</a></h4>
+                    {% endif %}
+
+                    {% if gracz.prorok %}
+                        <img src="http://www.heroes3.eu/images/budowle/chatka-maga.gif">
+                        <h4><a href="/prorok/">Chata proroka</a></h4>
+                    {% endif %}
+                </td>
+	        </tr>
+        </table>
+
+        </center>
+
+        <p>Ilość złota: {{ gracz.gold }}</p>
+        <p><a href="/">Wróć</a></p>
+    {% endif %}
+{% endblock %}

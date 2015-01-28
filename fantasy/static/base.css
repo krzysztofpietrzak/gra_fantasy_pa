@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.stopka {
+    color: purple;
+    font-size: 12px;
+    text-align: center;
+}
+
+.link_lista {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.title {
+    color: green;
+    font-size: 60px;
+    background-color: #F5FFFA;
+}

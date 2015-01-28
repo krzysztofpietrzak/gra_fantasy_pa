@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head lang="pl">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://avnerkp.pythonanywhere.com/static/base.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% if user.is_authenticated and gracz.rasa == 'czlowiek' %}
+        <img src="http://www.tarphoid.com/images/CKDV/knightBanner.jpg">
+
+    {% elif user.is_authenticated and gracz.rasa == 'goblin'%}
+        <img src="http://www.beastsofwar.com/wp-content/uploads/2012/02/Orcs-and-Goblins-Banner.jpg">
+    {% else %}
+        <img src="http://www.thomryng.com/wp-content/uploads/2012/10/Common-Wombat.jpg"/>
+    {% endif %}
+
+    <a href="/"><h1 class="title">Gra fantasy</h1></a>
+
+    <hr>
+    {% block header %}{% endblock %}
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+    <hr>
+    <div style="font-size: 12px; color: purple">Projekt zespołowy</div>
+</body>
+</html>

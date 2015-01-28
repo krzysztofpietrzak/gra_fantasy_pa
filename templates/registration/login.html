@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Logowanie{% endblock %}
+
+{% block content %}
+    <p>
+        <div style="margin-left:30%;margin-right:30%;">
+            <fieldset>
+                <legend> Logowanie: </legend>
+                <form method="post" action=".">{% csrf_token %}
+                <div>{{ form.as_p }}</div>
+                <input type="hidden" name="next" value="/" />
+                <input type="submit" value="Logowanie"/>   <input type="reset" value="Reset"/>
+            </fieldset>
+        </div>
+    </p>
+    <p><a href="/">Wróć</a></p>
+{% endblock %}

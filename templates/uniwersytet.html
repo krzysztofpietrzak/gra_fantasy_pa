@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Uniwersytet{% endblock %}
+
+{% block content %}
+    <h1>Uniwersytet</h1>
+    <p>Tutaj odkrywasz nowe technologie.</p>
+    <center>
+
+    {% if user.is_authenticated %}
+        <table border="1" width="600px" style="text-align: center">
+            <tr>
+                <td>
+                    <img src="http://vignette3.wikia.nocookie.net/civilization/images/0/06/Currency_(Civ5).png/revision/latest?cb=20101022182757">
+                    <h2>Waluta</h2>
+                    <p>Zwiększa przychody złota.</p>
+                </td>
+                <td>
+                    <h2>{{ gracz.waluta }}</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="http://vignette4.wikia.nocookie.net/civilization/images/6/6c/Theology_(Civ5).png/revision/latest?cb=20101022183302">
+                    <h2>Teologia</h2>
+                    <p>Zwiększa przychody złota.</p>
+                </td>
+                <td>
+                    <h2>{{ gracz.teologia }}</h2>
+                </td>
+            </tr>
+        </table>
+    {% endif %}
+    </center>
+    <p><a href="/widok_miasta/">Wróć</a></p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista graczy{% endblock %}
+
+{% block content %}
+<p>Liczba graczy: {{ liczba }}</p>
+
+{% for player in players %}
+    {% if player.username != 'pmanager'%}
+        <h3>{{ player.username }}</h3>
+    {% endif %}
+
+{% endfor %}
+<p><a href="/">Wróć</a></p>
+{% endblock %}

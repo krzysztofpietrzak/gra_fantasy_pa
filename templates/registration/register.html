@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+{% block title %}Rejestracja{% endblock %}
+{##}
+{#{% block content %}#}
+{#  <p>#}
+{#    <div style="margin-left:30%;margin-right:30%;">#}
+{#      <fieldset>#}
+{#        <legend>Rejestracja: </legend>#}
+{#    <form method="post" action=".">{% csrf_token %}#}
+{#        #}
+{#        {{ form.as_p }}#}
+{##}
+{#    <input type="submit" value="Rejestracja">  <input type="reset" value="Reset">#}
+{#  </form>#}
+{#    </fieldset>#}
+{#    <p><a href="/">Wróć</a></p>#}
+{#</div>#}
+{#{% endblock %}#}
+
+{% block content %}
+    <p>
+        <div style="margin-left: 30%; margin-right: 30%">
+            <fieldset>
+                <legend>Rejestracja:</legend>
+                <form method="post" action=".">{% csrf_token %}
+
+                    {{ form.as_p }}
+                    <input type="submit" value="OK"> <input type="reset" value="Reset">
+
+                </form>
+            </fieldset>
+            <p><a href="/">Wróć</a></p>
+        </div>
+    </p>
+{% endblock %}

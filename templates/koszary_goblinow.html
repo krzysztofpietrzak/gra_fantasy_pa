@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Koszary{% endblock %}
+
+{% block content %}
+    <h1>Koszary</h1>
+    <p>Tutaj szkolisz nowe jednostki.</p>
+    <center>
+
+
+    {% if user.is_authenticated %}
+        <table border="1" width="600px" style="text-align: center">
+
+            <tr>
+                <td>
+                    <img src="http://www.heroes3.eu/images/twierdza/jednostki/goblin.gif">
+                    <h2>Wojownik</h2>
+                    <p>Podstawowa jednostka.</p>
+                </td>
+                <td>
+                    <h2>{{ gracz.wojownik}}</h2>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <img src="http://www.heroes3.eu/images/twierdza/jednostki/uruk.gif">
+                    <h2>Topornik</h2>
+                    <p>Podstawowa jednostka strzelecka.</p>
+                </td>
+                <td>
+                    <h2>{{ gracz.lucznik }}</h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="http://www.heroes3.eu/images/twierdza/jednostki/wilczy-rycerz.gif">
+                    <h2>Wilczy jeździec</h2>
+                    <p>Podstawowa jednostka konna.</p>
+                </td>
+                <td>
+                    <h2>{{ gracz.rycerz }}</h2>
+                </td>
+            </tr>
+
+        </table>
+    {% endif %}
+        </center>
+    <p><a href="/widok_miasta/">Wróć</a></p>
+{% endblock %}
