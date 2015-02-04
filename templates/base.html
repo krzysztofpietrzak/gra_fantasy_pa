@@ -4,7 +4,8 @@
 <html>
 <head lang="pl">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="http://avnerkp.pythonanywhere.com/static/base.css">
+{#    <link rel="stylesheet" type="text/css" href="http://avnerkp.pythonanywhere.com/static/base.css">#}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -26,5 +27,28 @@
     </div>
     <hr>
     <div style="font-size: 12px; color: purple">Projekt zespołowy</div>
+
+    <div id="clockDisplay" class="clockstyle" style="margin-top: 5px"></div>
+
+    <script type="text/javascript" language="javascript">
+        function renderTime() {
+
+            var currentTime = new Date();
+            var diem = "AM";
+            var h = currentTime.getHours();
+            var m = currentTime.getMinutes();
+            var s = currentTime.getSeconds();
+
+            var myClock = document.getElementById('clockDisplay');
+
+            myClock.textContent = h + ":" + m + ":" + s;
+            setTimeout('renderTime()', 1000);
+
+			}
+
+		renderTime()
+	</script>
+
+
 </body>
 </html>

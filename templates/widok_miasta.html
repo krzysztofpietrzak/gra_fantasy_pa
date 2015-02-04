@@ -55,7 +55,23 @@
 
         </center>
 
-        <p>Ilość złota: {{ gracz.gold }}</p>
+        <p id="goldView"> </p>
         <p><a href="/">Wróć</a></p>
+
+
+        <script type="text/javascript" language="javascript">
+			function renderGold() {
+
+				var g = {{ gracz.gold }}
+
+				var currentGold = document.getElementById('goldView');
+
+				currentGold.textContent = "Ilość złota: " + g;
+				setTimeout('renderGold()', 5000);
+
+			}
+
+			renderGold()
+		</script>
     {% endif %}
 {% endblock %}

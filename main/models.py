@@ -20,19 +20,20 @@ class Gracz(models.Model):
     uniwersytet = models.BooleanField(default=False)
     prorok = models.BooleanField(default=False)
 
+    wieza = models.IntegerField(default=0)
 
     #technologie
     #ludzie
-    waluta = 0
-    teologia = 0
+    waluta = models.IntegerField(default=0)
+    teologia = models.IntegerField(default=0)
 
     #gobliny
-    sidla = 0
-    lupienie = 0
+    sidla = models.IntegerField(default=0)
+    lupienie = models.IntegerField(default=0)
 
 
     #jednostki
-    wojownik = 5
-    lucznik = 1
-    rycerz = 0
+    wojownik = models.IntegerField(default=5)
+    lucznik = models.IntegerField(default=3)
+    rycerz = models.IntegerField(default=1)
 

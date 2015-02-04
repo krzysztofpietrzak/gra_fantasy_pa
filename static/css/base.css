@@ -37,3 +37,15 @@ ul {
     font-size: 60px;
     background-color: #F5FFFA;
 }
+
+.clockStyle {
+    background-color: black;
+    border: #999 2px inset;
+    padding: 6px;
+    color: #0FF;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: inline;
+}
